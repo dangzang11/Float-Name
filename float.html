@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Floating Text </title>
+      <style>  *{
+            margin:0;
+            padding:0;
+            font-family:Montserrat, sans-serif;
+            }
+            
+            body {
+            height:100vh;
+            background:linear-gradient(0deg, #3498db 50%, #fff 0%);
+            display:flex;
+            justify-content:center;
+            align-items:center ;
+            }
+            
+            /* /created by Sunny/ */
+            
+            .floating-text{
+            font-size:80px;
+            font-weight:900;
+            text-transform:uppercase ;
+            letter-spacing:6px;
+            color:#ffffff40;
+            transform:translateY(0);
+            animation:f11 3s infinite  linear;
+            }
+            
+            .floating-text::before{
+            content:attr(data-text);
+            position:absolute ;
+            color:#ff3936;
+            clip-path:polygon(0 0,100% 0,100% 50%,0 50%);
+            animation:f12 3s infinite linear;
+            }
+            
+            @keyframes f11{
+            30%{
+            transform:translateY(10%) rotate(4deg);
+            }
+            70%{
+            transform:translateY(10%) rotate(-4deg);
+            }
+            }
+            
+            @keyframes f12{
+            30%{
+            clip-path:polygon(0 0,100% 0,100% 28%,0 52%);
+            }
+            70%{
+            clip-path:polygon(0 0,100% 0,100% 52%,0 28%);
+            }
+            } 
+        </style>
+            
+    </head>
+    <body>
+        <div class="floating-text" data-text="&copy;Sunny">&copy;Sunny</div>
+        <!--created by sunny--->
+    </body>
+</html>
